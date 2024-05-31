@@ -1,0 +1,20 @@
+{
+	"configurations": [
+		{
+			"name": "Transform",
+			"request": "launch",
+			"runtimeArgs": ["run", "transform"],
+			"runtimeExecutable": "pnpm",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node"
+		},
+		{
+			"name": "Tests",
+			"request": "launch",
+			"runtimeArgs": ["run", "test"],
+			"runtimeExecutable": "pnpm",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node"
+		}
+	]
+}

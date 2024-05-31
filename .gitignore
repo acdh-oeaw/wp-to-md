@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# logs
+*.log
+
+# non-public environment variables
+.env.local
+.env.*.local
+
+# caches
+.eslintcache
+*.tsbuildinfo
+
+# misc
+.DS_Store
+.idea/
+
+# build
+dist/
+
+# content
+/content/
+/public/

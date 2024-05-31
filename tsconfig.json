@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@acdh-oeaw/tsconfig-lib",
+	"compilerOptions": {
+		"module": "preserve",
+		"moduleResolution": "bundler"
+	},
+	"exclude": ["content", "public", "node_modules"]
+}
