@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@acdh-oeaw/lib':
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       rehype-parse:
         specifier: ^9.0.0
         version: 9.0.0
@@ -39,27 +39,27 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
       valibot:
-        specifier: ^0.31.0-rc.7
-        version: 0.31.0-rc.7
+        specifier: ^0.31.0
+        version: 0.31.0
       yaml:
-        specifier: ^2.4.2
-        version: 2.4.2
+        specifier: ^2.4.3
+        version: 2.4.3
     devDependencies:
       '@acdh-oeaw/commitlint-config':
         specifier: ^1.0.0
-        version: 1.0.0(@commitlint/cli@19.3.0(@types/node@20.12.13)(typescript@5.4.5))
+        version: 1.0.0(@commitlint/cli@19.3.0(@types/node@20.14.2)(typescript@5.4.5))
       '@acdh-oeaw/eslint-config':
         specifier: ^1.0.7
         version: 1.0.7(eslint@8.57.0)(typescript@5.4.5)
       '@acdh-oeaw/prettier-config':
         specifier: ^2.0.0
-        version: 2.0.0(prettier@3.2.5)
+        version: 2.0.0(prettier@3.3.1)
       '@acdh-oeaw/tsconfig-lib':
         specifier: ^1.0.1
         version: 1.0.1(typescript@5.4.5)
       '@commitlint/cli':
         specifier: ^19.3.0
-        version: 19.3.0(@types/node@20.12.13)(typescript@5.4.5)
+        version: 19.3.0(@types/node@20.14.2)(typescript@5.4.5)
       '@types/hast':
         specifier: ^3.0.4
         version: 3.0.4
@@ -67,8 +67,8 @@ importers:
         specifier: ^4.0.4
         version: 4.0.4
       '@types/node':
-        specifier: ^20.12.13
-        version: 20.12.13
+        specifier: ^20.14.2
+        version: 20.14.2
       dotenv-cli:
         specifier: ^7.4.2
         version: 7.4.2
@@ -85,14 +85,14 @@ importers:
         specifier: ^6.2.0
         version: 6.2.0
       prettier:
-        specifier: ^3.2.5
-        version: 3.2.5
+        specifier: ^3.3.1
+        version: 3.3.1
       simple-git-hooks:
         specifier: ^2.11.1
         version: 2.11.1
       tsx:
-        specifier: ^4.11.0
-        version: 4.11.0
+        specifier: ^4.13.2
+        version: 4.13.2
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -113,9 +113,9 @@ packages:
       eslint: 8.x
       typescript: '>=5'
 
-  '@acdh-oeaw/lib@0.1.11':
-    resolution: {integrity: sha512-jkzEfAF0ZOAfMpPl5hc0tqD17Be+wRIhe1gePUM03korWaBvBhfgBi4sPhuQ1GUOV45kYHgfFEnfcDKIx9EqXg==}
-    engines: {node: '>=20', pnpm: '>=8'}
+  '@acdh-oeaw/lib@0.1.12':
+    resolution: {integrity: sha512-yNAjUxcoqvEXX+YsqWqOqCOJeFg6oYL2Q+bVdhu6LEQU1MGpcMbo7haSTX12X8UYZjIU6oWpHrZfdKZZxRH23Q==}
+    engines: {node: '>=20', pnpm: '>=9'}
 
   '@acdh-oeaw/prettier-config@2.0.0':
     resolution: {integrity: sha512-PhjHkJRb5K5uWMZ6s6IzNLvBns4Ei+osR6g/XmItFb0B844VOsU6iO3DbRyrHo8zTpMzsftkxVxT9S/b3KVmtQ==}
@@ -411,8 +411,8 @@ packages:
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
-  '@types/node@20.12.13':
-    resolution: {integrity: sha512-gBGeanV41c1L171rR7wjbMiEpEI/l5XFQdLLfhr/REwpgDy/4U8y89+i8kRiLzDyZdOkXh+cRaTetUnCYutoXA==}
+  '@types/node@20.14.2':
+    resolution: {integrity: sha512-xyu6WAMVwv6AKFLB+e/7ySZVr/0zLCzOa7rSpq6jNwpqOrUbcACDWC+53d4n2QHOnDou0fbIsg8wZu/sxrnI4Q==}
 
   '@types/unist@2.0.10':
     resolution: {integrity: sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA==}
@@ -1529,8 +1529,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier@3.2.5:
-    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
+  prettier@3.3.1:
+    resolution: {integrity: sha512-7CAwy5dRsxs8PHXT3twixW9/OEll8MLE0VRPCJyl7CkS6VHGPSlsVaWTiASPTyGyYRyApxlaWTzwUxVNrhcwDg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -1736,8 +1736,8 @@ packages:
     peerDependencies:
       typescript: '>=4.2.0'
 
-  tsx@4.11.0:
-    resolution: {integrity: sha512-vzGGELOgAupsNVssAmZjbUDfdm/pWP4R+Kg8TVdsonxbXk0bEpE1qh0yV6/QxUVXaVlNemgcPajGdJJ82n3stg==}
+  tsx@4.13.2:
+    resolution: {integrity: sha512-s+WGqChkA77uU8xij1IdO9jQnwJAiWJto0bF5yJLbAZpLtNs82Qa5CwMBxWjJ7QOYU9MzBf4MCNt6lZduwkQ+g==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -1791,8 +1791,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  valibot@0.31.0-rc.7:
-    resolution: {integrity: sha512-7cFx/n1F1kaPSe9pBxZO3g9PsQnhvWcQhPwE/zH5GJpQ/oMgo8HLxpfE87BEWwOqGVYNIcLIkiWfnCAbHik6uA==}
+  valibot@0.31.0:
+    resolution: {integrity: sha512-bleS8aVFpRGTUgbMoXzsRJhpxJGiZ3MG1nuNSORuDvio+sI1EyT1+lQHg+77Pfnlxz+25Uj5HiwdaklcDcYdiQ==}
 
   vfile-location@5.0.2:
     resolution: {integrity: sha512-NXPYyxyBSH7zB5U6+3uDdd6Nybz6o6/od9rk8bp9H8GR3L+cm/fC0uUTbqBmUTnMCUDslAGBOIKNfvvb+gGlDg==}
@@ -1833,8 +1833,8 @@ packages:
     resolution: {integrity: sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==}
     engines: {node: '>=10'}
 
-  yaml@2.4.2:
-    resolution: {integrity: sha512-B3VqDZ+JAg1nZpaEmWtTXUlBneoGx6CPM9b0TENK6aoSu5t73dItudwdgmi6tHlIZZId4dZ9skcAQ2UbcyAeVA==}
+  yaml@2.4.3:
+    resolution: {integrity: sha512-sntgmxj8o7DE7g/Qi60cqpLBA3HG3STcDA0kO+WfB05jEKhZMbY7umNm2rBpQvsmZ16/lPXCJGW2672dgOUkrg==}
     engines: {node: '>= 14'}
     hasBin: true
 
@@ -1859,9 +1859,9 @@ packages:
 
 snapshots:
 
-  '@acdh-oeaw/commitlint-config@1.0.0(@commitlint/cli@19.3.0(@types/node@20.12.13)(typescript@5.4.5))':
+  '@acdh-oeaw/commitlint-config@1.0.0(@commitlint/cli@19.3.0(@types/node@20.14.2)(typescript@5.4.5))':
     dependencies:
-      '@commitlint/cli': 19.3.0(@types/node@20.12.13)(typescript@5.4.5)
+      '@commitlint/cli': 19.3.0(@types/node@20.14.2)(typescript@5.4.5)
       '@commitlint/config-conventional': 19.2.2
 
   '@acdh-oeaw/eslint-config@1.0.7(eslint@8.57.0)(typescript@5.4.5)':
@@ -1879,11 +1879,11 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  '@acdh-oeaw/lib@0.1.11': {}
+  '@acdh-oeaw/lib@0.1.12': {}
 
-  '@acdh-oeaw/prettier-config@2.0.0(prettier@3.2.5)':
+  '@acdh-oeaw/prettier-config@2.0.0(prettier@3.3.1)':
     dependencies:
-      prettier: 3.2.5
+      prettier: 3.3.1
 
   '@acdh-oeaw/tsconfig-lib@1.0.1(typescript@5.4.5)':
     dependencies:
@@ -1903,11 +1903,11 @@ snapshots:
       js-tokens: 4.0.0
       picocolors: 1.0.1
 
-  '@commitlint/cli@19.3.0(@types/node@20.12.13)(typescript@5.4.5)':
+  '@commitlint/cli@19.3.0(@types/node@20.14.2)(typescript@5.4.5)':
     dependencies:
       '@commitlint/format': 19.3.0
       '@commitlint/lint': 19.2.2
-      '@commitlint/load': 19.2.0(@types/node@20.12.13)(typescript@5.4.5)
+      '@commitlint/load': 19.2.0(@types/node@20.14.2)(typescript@5.4.5)
       '@commitlint/read': 19.2.1
       '@commitlint/types': 19.0.3
       execa: 8.0.1
@@ -1954,7 +1954,7 @@ snapshots:
       '@commitlint/rules': 19.0.3
       '@commitlint/types': 19.0.3
 
-  '@commitlint/load@19.2.0(@types/node@20.12.13)(typescript@5.4.5)':
+  '@commitlint/load@19.2.0(@types/node@20.14.2)(typescript@5.4.5)':
     dependencies:
       '@commitlint/config-validator': 19.0.3
       '@commitlint/execute-rule': 19.0.0
@@ -1962,7 +1962,7 @@ snapshots:
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.4.5)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.12.13)(cosmiconfig@9.0.0(typescript@5.4.5))(typescript@5.4.5)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.14.2)(cosmiconfig@9.0.0(typescript@5.4.5))(typescript@5.4.5)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -2136,7 +2136,7 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
-      '@types/node': 20.12.13
+      '@types/node': 20.14.2
 
   '@types/debug@4.1.12':
     dependencies:
@@ -2158,7 +2158,7 @@ snapshots:
 
   '@types/ms@0.7.34': {}
 
-  '@types/node@20.12.13':
+  '@types/node@20.14.2':
     dependencies:
       undici-types: 5.26.5
 
@@ -2395,9 +2395,9 @@ snapshots:
       meow: 12.1.1
       split2: 4.2.0
 
-  cosmiconfig-typescript-loader@5.0.0(@types/node@20.12.13)(cosmiconfig@9.0.0(typescript@5.4.5))(typescript@5.4.5):
+  cosmiconfig-typescript-loader@5.0.0(@types/node@20.14.2)(cosmiconfig@9.0.0(typescript@5.4.5))(typescript@5.4.5):
     dependencies:
-      '@types/node': 20.12.13
+      '@types/node': 20.14.2
       cosmiconfig: 9.0.0(typescript@5.4.5)
       jiti: 1.21.0
       typescript: 5.4.5
@@ -3032,7 +3032,7 @@ snapshots:
       micromatch: 4.0.7
       pidtree: 0.6.0
       string-argv: 0.3.2
-      yaml: 2.4.2
+      yaml: 2.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -3660,7 +3660,7 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier@3.2.5: {}
+  prettier@3.3.1: {}
 
   property-information@6.5.0: {}
 
@@ -3865,7 +3865,7 @@ snapshots:
     dependencies:
       typescript: 5.4.5
 
-  tsx@4.11.0:
+  tsx@4.13.2:
     dependencies:
       esbuild: 0.20.2
       get-tsconfig: 4.7.5
@@ -3935,7 +3935,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  valibot@0.31.0-rc.7: {}
+  valibot@0.31.0: {}
 
   vfile-location@5.0.2:
     dependencies:
@@ -3981,7 +3981,7 @@ snapshots:
 
   y18n@5.0.8: {}
 
-  yaml@2.4.2: {}
+  yaml@2.4.3: {}
 
   yargs-parser@21.1.1: {}
 

@@ -9,6 +9,7 @@ import {
 	isNonEmptyArray,
 	isNonEmptyString,
 	isNonNullable,
+	isoDate,
 	log,
 } from "@acdh-oeaw/lib";
 import type { Root } from "hast";
@@ -87,7 +88,7 @@ export async function transform(
 function getPathSegments(item: WP_REST_API_Page, data: WordPressData): Array<string> {
 	const categories = item.categories;
 
-	if (!isNonEmptyArray(categories)) return ["unknown"];
+	if (!isNonEmptyArray(categories)) return ["none"];
 
 	if (categories.length > 1) {
 		log.warn(`Multiple categories found in ${item.slug}.`);
@@ -99,9 +100,7 @@ function getPathSegments(item: WP_REST_API_Page, data: WordPressData): Array<str
 
 	assert(category, `Unknown category id ${categoryId}.`);
 
-	const segments = config.paths[category];
-
-	assert(segments, `No path config found for category ${category}.`);
+	const segments = config.paths[category] ?? ["unknown"];
 
 	return segments;
 }
@@ -122,7 +121,7 @@ function plaintext(value: string) {
 }
 
 function date(value: string) {
-	return new Date(value).toISOString().slice(0, 10);
+	return isoDate(new Date(value));
 }
 
 async function mdx(value: string, processor: ReturnType<typeof createProcessor>) {
