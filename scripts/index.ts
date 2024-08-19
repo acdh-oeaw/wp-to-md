@@ -1,17 +1,20 @@
 import { log } from "@acdh-oeaw/lib";
 
+import { config as defaultConfig } from "../config/transform.config.js";
 import { fix } from "./fix.js";
 import { getWordPressData } from "./get-wordpress-data.js";
 import { type Report, transform } from "./transform.js";
 
 async function run() {
-	const data = await getWordPressData();
+	const config = defaultConfig;
 
-	const pages = await transform(Object.values(data.pages), data);
-	const posts = await transform(Object.values(data.posts), data);
+	const data = await getWordPressData(config);
+
+	const pages = await transform(config, Object.values(data.pages), data);
+	const posts = await transform(config, Object.values(data.posts), data);
 
 	const transformed: Report = new Map([...pages, ...posts]);
-	await fix(transformed);
+	await fix(config, transformed);
 }
 
 run()

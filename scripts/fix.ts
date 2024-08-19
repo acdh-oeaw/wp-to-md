@@ -10,17 +10,17 @@ import remarkStringify from "remark-stringify";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
 
-import { config } from "../config/transform.config.js";
+import type { Config } from "../config/transform.config.js";
 import { withSlashes } from "./lib.js";
 import type { Report } from "./transform.js";
 
 /**
  * Fix internal links.
  */
-export async function fix(items: Report): Promise<Map<string, string>> {
+export async function fix(config: Config, items: Report): Promise<Map<string, string>> {
 	const fixes = new Map<string, string>();
 
-	const processor = createProcessor(items, fixes);
+	const processor = createProcessor(config, items, fixes);
 
 	for (const [_id, item] of items) {
 		const content = await readFile(item.filePath, { encoding: "utf-8" });
@@ -31,7 +31,7 @@ export async function fix(items: Report): Promise<Map<string, string>> {
 	return fixes;
 }
 
-function createProcessor(items: Report, fixes: Map<string, string>) {
+function createProcessor(config: Config, items: Report, fixes: Map<string, string>) {
 	const processor = unified()
 		.use(remarkParse)
 		.use(remarkFrontmatter)
@@ -61,7 +61,7 @@ function transformLinksPlugin(items: Report, wordPressBaseUrl: string, fixes: Ma
 				url = pathname;
 
 				if (!fixes.has(url)) {
-					log.warn(`No item found for ${href}.`);
+					log.warn(`No item found for link to ${href}.`);
 				}
 			}
 

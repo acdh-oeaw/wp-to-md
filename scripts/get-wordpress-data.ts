@@ -10,7 +10,7 @@ import type {
 	WP_REST_API_Posts,
 } from "wp-types";
 
-import { config } from "../config/transform.config.js";
+import type { Config } from "../config/transform.config";
 
 export interface WordPressData {
 	pages: Record<WP_REST_API_Page["id"], WP_REST_API_Page>;
@@ -19,12 +19,12 @@ export interface WordPressData {
 	categories: Record<WP_REST_API_Category["id"], WP_REST_API_Category>;
 }
 
-export async function getWordPressData(): Promise<WordPressData> {
+export async function getWordPressData(config: Config): Promise<WordPressData> {
 	const [pages, posts, media, categories] = await Promise.all([
-		getPages(),
-		getPosts(),
-		getMedia(),
-		getCategories(),
+		getPages(config),
+		getPosts(config),
+		getMedia(config),
+		getCategories(config),
 	]);
 
 	const data = {
@@ -55,7 +55,7 @@ async function getAll<T>(url: URL): Promise<Array<T>> {
 	return results;
 }
 
-function getPages(): Promise<WP_REST_API_Pages> {
+export function getPages(config: Config): Promise<WP_REST_API_Pages> {
 	const url = createUrl({
 		baseUrl: config.wordPressBaseUrl,
 		pathname: "/wp-json/wp/v2/pages",
@@ -65,7 +65,7 @@ function getPages(): Promise<WP_REST_API_Pages> {
 	return getAll(url);
 }
 
-function getPosts(): Promise<WP_REST_API_Posts> {
+export function getPosts(config: Config): Promise<WP_REST_API_Posts> {
 	const url = createUrl({
 		baseUrl: config.wordPressBaseUrl,
 		pathname: "/wp-json/wp/v2/posts",
@@ -75,7 +75,7 @@ function getPosts(): Promise<WP_REST_API_Posts> {
 	return getAll(url);
 }
 
-function getMedia(): Promise<WP_REST_API_Attachments> {
+export function getMedia(config: Config): Promise<WP_REST_API_Attachments> {
 	const url = createUrl({
 		baseUrl: config.wordPressBaseUrl,
 		pathname: "/wp-json/wp/v2/media",
@@ -85,7 +85,7 @@ function getMedia(): Promise<WP_REST_API_Attachments> {
 	return getAll(url);
 }
 
-function getCategories(): Promise<WP_REST_API_Categories> {
+export function getCategories(config: Config): Promise<WP_REST_API_Categories> {
 	const url = createUrl({
 		baseUrl: config.wordPressBaseUrl,
 		pathname: "/wp-json/wp/v2/categories",

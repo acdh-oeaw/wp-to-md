@@ -23,13 +23,14 @@ import { visit } from "unist-util-visit";
 import type { WP_REST_API_Page } from "wp-types";
 import * as YAML from "yaml";
 
-import { config } from "../config/transform.config.js";
+import type { Config } from "../config/transform.config.js";
 import type { WordPressData } from "./get-wordpress-data.js";
 import { withSlashes } from "./lib.js";
 
 export type Report = Map<WP_REST_API_Page["slug"], { filePath: string; slug: string }>;
 
 export async function transform(
+	config: Config,
 	items: Array<WP_REST_API_Page>,
 	data: WordPressData,
 ): Promise<Report> {
@@ -42,7 +43,7 @@ export async function transform(
 	for (const item of items) {
 		if (item.status !== "publish") continue;
 
-		const segments = getPathSegments(item, data);
+		const segments = getPathSegments(config, item, data);
 
 		const contentFolder = join(config.contentBaseFolder, ...segments);
 		const assetFolder = join(config.assetBaseFolder, ...segments, item.slug);
@@ -85,13 +86,21 @@ export async function transform(
 	return done;
 }
 
-function getPathSegments(item: WP_REST_API_Page, data: WordPressData): Array<string> {
+function getPathSegments(
+	config: Config,
+	item: WP_REST_API_Page,
+	data: WordPressData,
+): Array<string> {
 	const categories = item.categories;
 
 	if (!isNonEmptyArray(categories)) return ["none"];
 
 	if (categories.length > 1) {
-		log.warn(`Multiple categories found in ${item.slug}.`);
+		const multiple = categories.map((id) => {
+			return data.categories[id]?.slug;
+		});
+
+		log.warn(`Multiple categories found in ${item.slug}: ${multiple.join(", ")}.`);
 	}
 
 	const categoryId = categories.at(0)!;
@@ -109,10 +118,10 @@ function sanitize(value: string): string {
 	return (
 		value
 			.replace(/&nbsp;/g, " ")
-			// eslint-disable-next-line no-irregular-whitespace
-			.replace(/[​ ]/g, " ")
+			.replace(/[\u200b\xa0]/g, " ")
 			.replace(/[‚‘’]/g, "'")
 			.replace(/[„“”]/g, '"')
+			.replace(/<!--.*?-->/g, "")
 	);
 }
 
